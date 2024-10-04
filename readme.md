@@ -1,6 +1,6 @@
 # Sirene Loader
 
-The **Sirene Loader** is a Python application designed to fetch data from an API, process it using Apache Spark, and manage it within Delta Lake tables. This project utilizes various configurations for flexibility and scalability, making it suitable for data ingestion workflows.
+**Sirene Loader** is a Python application designed to fetch economic data from the Opendatasoft API, process it using Apache Spark, and manage data storage with Delta Lake. This project facilitates the initialization and incremental updates of a Delta table, driven by configurations defined in a YAML file.
 
 ## Table of Contents
 
@@ -9,9 +9,6 @@ The **Sirene Loader** is a Python application designed to fetch data from an API
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Logging](#logging)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -29,11 +26,27 @@ The **Sirene Loader** is a Python application designed to fetch data from an API
 - PyYAML
 - Requests
 
-You can install the required packages using pip:
+
+## Installation
 
 ```bash
-git clone https://github.com/Nouuh/sirene_loader.git
+git clone https://github.com/Nouuh/sirene_loader.git #Clone the repository**:
 cd sirene_loader
-python -m venv venv
+python -m venv venv #Create a virtual environment (optional but recommended):
 source venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt #Install dependencies
+```
+
+## Usage
+
+To execute the application, you must specify the run type and, a date. The provided date will determine the range of data fetched from OpenDataSoft, starting from the specified date up to the most recent available data. Use the command below:
+
+```bash
+python main.py --run_type <run_type> --date <YYYY-MM-DD>
+```
+
+Example: 
+
+```bash
+python main.py --run_type init --date 2024-10-04
+```
