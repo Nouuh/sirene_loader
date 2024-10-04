@@ -6,6 +6,7 @@ spark:
   update_query_columns: ["SIERT", "SIREN", "datederniertraitementetablissement"]
   read_format: "csv"
   read_options: 
+    “inferSchema”: True
     "delimiter": ";"
     "encoding": "UTF-8"
     "header": True
@@ -13,14 +14,20 @@ spark:
     "spark.jars.packages": "io.delta:delta-core_2.12:2.2.0"
     "spark.sql.extensions": "io.delta.sql.DeltaSparkSessionExtension"
     "spark.sql.catalog.spark_catalog": "org.apache.spark.sql.delta.catalog.DeltaCatalog"
+  s3_config: 
+    "spark.hadoop.fs.s3a.endpoint": "my-s3.endpoint"
+    "spark.hadoop.fs.s3a.impl": "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    "fs.s3a.aws.credentials.provider": "com.amazonaws.auth.DefaultAWSCredentialsProviderChain"
+    "spark.hadoop.fs.s3a.access.key": s3_access_key
+    "spark.hadoop.fs.s3a.secret.key": s3_secret_key
 
 delta:
-  datasource: "data"
-  source: "init" 
+  datasource: "data" #we can put the bucket name if S3 used as storage
+  source: "init"
   target: "delta"
   update_query_columns: ["SIRET", "SIREN"] #to be confirmed if they are primary keys
 
 api:
-  api_url: "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/economicref-france-sirene-v3/exports"
+  api_url: "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/economicref-france-sirene-v3/exports" #we can split it and create new conf export_end_point: /catalog/datasets/economicref-france-sirene-v3/exports
   format: "csv"
   update_params : "datederniertraitementetablissement"
