@@ -41,7 +41,7 @@ pip install -r requirements.txt #Install dependencies
 
 To execute the application, you must specify the run type and, a date. The provided date will determine the range of data fetched from OpenDataSoft, starting from the specified date up to the most recent available data. Use the command below:
 
-**Note: To initialize the table, you can either check the last update date using the OpenDataSoft API or directly download the export file and load it into the Delta table.
+**Note: To initialize the table, you can either check the old update date using the OpenDataSoft API or directly download the export file and load it into the Delta table.
 https://public.opendatasoft.com/api/explore/v2.1/console
 
 ```bash
