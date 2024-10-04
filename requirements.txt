@@ -1,3 +1,5 @@
+
+pytest
 pyspark
 requests
 pyyaml

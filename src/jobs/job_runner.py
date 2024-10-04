@@ -3,7 +3,7 @@ from src.api.api_client import ApiClient
 from src.delta.delta_manager import DeltaManager
 from src.utils.constants import INTEGRATION_DATE
 from src.utils.logger_utils import logger
-from src.jobs.spark_session_maneger import SparkSessionManager
+from src.jobs.spark_session_manager import SparkSessionManager
 
 def run_job(config):
     """
