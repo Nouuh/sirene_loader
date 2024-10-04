@@ -32,4 +32,8 @@ The **Sirene Loader** is a Python application designed to fetch data from an API
 You can install the required packages using pip:
 
 ```bash
-pip install -r requirments
+git clone https://github.com/Nouuh/sirene_loader.git
+cd sirene_loader
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
