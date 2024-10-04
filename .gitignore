@@ -15,8 +15,6 @@ ENV/
 
 # Data Directories
 data/delta/
-data/init/
-data/update/
 
 # Pytest
 .cache
