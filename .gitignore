@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.bsp/
+
+# Data Directories
+data/delta/
+data/init/
+data/update/
+
+# Pytest
+.cache
+*.cover
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+
+# Pyre type checker
+.pyre/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# VS Code settings
+.vscode/
+
+# IDE-specific files
+.idea/
+*.iml
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Package files
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Miscellaneous
+*.tgz
+*.gz
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.bz2
